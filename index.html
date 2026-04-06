@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Weather app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <header>
+        <img src="./assets/images/logo.svg" alt="Weather App logo">
+      </header>
+    </div>
+    <div class="units-dropdown">
+      <button id="unitsBtn">
+        <img src="./assets/images/icon-units.svg" alt="Units Image"> Units <img src="./assets/images/icon-dropdown.svg" alt="drop-down image">
+      </button>
+
+      <div class="dropdown-menu" id="unitsMenu">
+        <div class="dropdown-section switch-btn">Switch to Imperial</div>
+
+        <div class="dropdown-title">Temperature</div>
+        <div class="dropdown-item" data-type="temp" data-value="celsius">
+          Celsius (°C)
+          <span class="checkmark"><img src="./assets/images/icon-checkmark.svg" alt="checkmarkImage"></span>
+        </div>
+        <div class="dropdown-item" data-type="temp" data-value="fahrenheit">
+          Fahrenheit (°F)
+        <span class="checkmark"><img src="./assets/images/icon-checkmark.svg" alt="checkmarkImage"></span>
+        </div>
+
+        <div class="dropdown-title">Wind Speed</div>
+        <div class="dropdown-item" data-type="wind" data-value="kmh">
+          km/h
+          <span class="checkmark"><img src="./assets/images/icon-checkmark.svg" alt="checkmarkImage"></span>
+        </div>
+        <div class="dropdown-item" data-type="wind" data-value="mph">
+          mph
+          <span class="checkmark"><img src="./assets/images/icon-checkmark.svg" alt="checkmarkImage"></span>
+        </div>
+
+        <div class="dropdown-title">Precipitation</div>
+        <div class="dropdown-item" data-type="precip" data-value="mm">
+          Millimeters (mm)
+          <span class="checkmark"><img src="./assets/images/icon-checkmark.svg" alt="checkmarkImage"></span>
+        </div>
+        <div class="dropdown-item" data-type="precip" data-value="inch">
+          Inches (in)
+          <span class="checkmark"><img src="./assets/images/icon-checkmark.svg" alt="checkmarkImage"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div>
+    <h1 id = "quote">How's the sky looking today?</h1>
+  </div>
+  <div id="search">
+    <div class="searchBar">
+        <img src="./assets/images/icon-search.svg" alt="search_image">
+        <input id="searchInput" type="text" placeholder="Search for a place...">
+    </div>
+    <div>
+      <button id="searchBtn">Search</button>
+    </div> 
+  </div>
+
+  <div class = "mainContent">
+    <div>
+      <div>
+        <div class="currentWeather">
+          <div class="location"></div>
+          <div class="temperature"></div>
+        </div>
+        <div class="metricsDetails">
+          <div class="metrics">
+            <h3>Feels like</h3>
+            <p id="feelsLike">-</p>
+          </div>
+          <div class="metrics">
+            <h3>Humidity</h3>
+            <p id="Humidity">-</p>
+          </div>
+          <div class="metrics">
+            <h3>Wind</h3>
+            <p id="windSpeed">-</p>
+          </div>
+          <div class="metrics">
+            <h3>Precipitation</h3>
+            <p id="precipitation">-</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="dailyForecastHeading">Daily Forecast</h3>
+          <div class="dailyForecast">
+            <div class="forecast" id="forecast0"></div>
+            <div class="forecast" id="forecast1"></div>
+            <div class="forecast" id="forecast2"></div>
+            <div class="forecast" id="forecast3"></div>
+            <div class="forecast" id="forecast4"></div>
+            <div class="forecast" id="forecast5"></div>
+            <div class="forecast" id="forecast6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="hourlyForecast">
+        <div class="hourlyForecastHeader">
+          <h3>Hourly Forecast</h3>
+          <p id="day-hourlyForecast">
+            <span class="label">-</span>
+            <span class="icon">
+              <img src="./assets/images/icon-dropdown.svg" alt="drop-down image">
+            </span>
+          </p>
+        </div>
+        <div>
+          <div class= "hourly" id="hour0"></div>
+          <div class= "hourly" id="hour1"></div>
+          <div class= "hourly" id="hour2"></div>
+          <div class= "hourly" id="hour3"></div>
+          <div class= "hourly" id="hour4"></div>
+          <div class= "hourly" id="hour5"></div>
+          <div class= "hourly" id="hour6"></div>
+          <div class= "hourly" id="hour7"></div>
+          <div class= "hourly" id="hour8"></div>
+          <div class= "hourly" id="hour9"></div>
+          <div class= "hourly" id="hour10"></div>
+          <div class= "hourly" id="hour11"></div>
+          <div class= "hourly" id="hour12"></div>
+          <div class= "hourly" id="hour13"></div>
+          <div class= "hourly" id="hour14"></div>
+          <div class= "hourly" id="hour15"></div>
+          <div class= "hourly" id="hour16"></div>
+          <div class= "hourly" id="hour17"></div>
+          <div class= "hourly" id="hour18"></div>
+          <div class= "hourly" id="hour19"></div>
+          <div class= "hourly" id="hour20"></div>
+          <div class= "hourly" id="hour21"></div>
+          <div class= "hourly" id="hour22"></div>
+          <div class= "hourly" id="hour23"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feels like --> 
+  <!-- Insert temperature here -->
+
+  <!-- Humidity -->
+  <!-- Insert humidity here -->
+
+  <!-- Wind -->
+  <!-- Insert wind here -->   
+  
+  <!-- Precipitation -->
+  <!-- Insert precipitation here -->
+
+  <!-- Daily forecast -->
+  <!-- Insert daily forecast for the next 7 days here -->
+
+  <!-- Hourly forecast -->
+  <!-- Insert hourly forecast for the selected day here -->
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="./script.js"></script>
+</body>
+</html>
